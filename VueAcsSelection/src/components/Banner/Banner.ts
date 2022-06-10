@@ -1,35 +1,34 @@
-import {  Vue } from 'vue-property-decorator';
 import { ComponentType, EditControlType, DisplayControlType } from '../../../src/Enumeration/Enumeration'; }
 import { AcsComponent } from '../../../src/Models/AcsComponent';
 import {EditControlFactory}  from '../../../src/Factory/EditControlFactory';
 import { DisplayControlFactory } from '../../Factory/DisplayControlFactory';
 
-export default class Banner extends Vue {
+export default {
 
-    AcsBanner: AcsComponent = new AcsComponent("", ComponentType.None, EditControlType.None,
-        DisplayControlType.None, "", false);
-
-    BannerComponent: HTMLElement = new HTMLElement();
-
-    constructor(AcsBanner: AcsComponent) {
-        super();
-        AcsBanner = new AcsComponent(
-            "AcsBanner", //Component Id
-            ComponentType.StaticContent, // ComponentType 
-            EditControlType.SingleLineTextbox,// EditControlType  ,
-            DisplayControlType.Heading, //DisplayControlType  ,
-            "Print and download documents.", // Display Text
-            true, // isEditable
-        );
-        this.CreateBannerControl(false);
-    }
+    props: ['AcsBanner'],
 
     methods: {
+        InitalizeBanner() {
+            if (this.AcsBanner) {
+                this.CreateBannerControl(false);
+            }
+            else {
+                AcsBanner = new AcsComponent(
+                    "AcsBanner", //Component Id
+                    ComponentType.StaticContent, // ComponentType 
+                    EditControlType.SingleLineTextbox,// EditControlType  ,
+                    DisplayControlType.Heading, //DisplayControlType  ,
+                    "Print and download documents.", // Display Text
+                    true, // isEditable
+                );
+            }
+        },
+
         CreateBannerControl(isEditMode: Boolean): void {
-            //add html control dynamically
-            var bannerDiv = document.getElementById("bannerDiv");
+        //add html control dynamically
+        var bannerDiv = document.getElementById("bannerDiv");
             if (bannerDiv) {
-                                        
+
                 if (!isEditMode) {
                     this.BannerComponent = DisplayControlFactory.Create(this.AcsBanner?.DisplayControlType, ["bannerDisplayControl"]);
                     if (this.BannerComponent)
@@ -40,11 +39,10 @@ export default class Banner extends Vue {
                     if (this.BannerComponent)
                         this.BannerComponent.id = this.AcsBanner?.ComponentId + "_Edit";
                 }
-                if (this.BannerComponent) { }
-                bannerDiv.appendChild(this.BannerComponent);
+                if (this.BannerComponent)
+                    bannerDiv.appendChild(this.BannerComponent);
             }
-
-        }
+        },
 
         HideControl(elementId: string) {
             var bannerDiv = document.getElementById("bannerDiv");
@@ -53,7 +51,7 @@ export default class Banner extends Vue {
                 element.setAttribute("style", "display:none;");
         }
 
-        Select() {
+        SelectEditControlType() {
             //get display control type dropdown and add it as a edit control type
             this.AcsBanner.EditControlType = EditControlType.SingleLineTextbox;
         }
@@ -71,4 +69,9 @@ export default class Banner extends Vue {
             // set the display control type suitable for the edit control type selected.
         }
     }
+    
+
+    
+
+    
 }
