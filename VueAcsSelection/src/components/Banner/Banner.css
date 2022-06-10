@@ -1,0 +1,21 @@
+.bannerDiv {
+    background-color: mediumseagreen;
+    width:stretch;
+    height:10pc;
+}
+
+
+.bannerDisplayControl {
+    color: white;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.bannerEditControl {
+    color: white;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+}
+
