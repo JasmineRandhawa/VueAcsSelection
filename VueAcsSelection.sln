@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "VueAcsSelection", "VueAcsSelection\VueAcsSelection.njsproj", "{2AB898AE-5E02-4CE2-9A5C-E2719A542FA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AB898AE-5E02-4CE2-9A5C-E2719A542FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB898AE-5E02-4CE2-9A5C-E2719A542FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB898AE-5E02-4CE2-9A5C-E2719A542FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB898AE-5E02-4CE2-9A5C-E2719A542FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB7CDA95-3DC9-4E27-9B71-D21EE03DF5F5}
+	EndGlobalSection
+EndGlobal
