@@ -3,11 +3,11 @@ import { ComponentType, EditControlType, DisplayControlType } from '../../src/En
 export class AcsComponent {
 
     constructor(
-        public ComponentId: String,
+        public ComponentId: string,
         public ComponentType: ComponentType,
         public EditControlType: EditControlType,
         public  DisplayControlType: DisplayControlType,
-        public  DisplayText: String,
+        public DisplayText: string,
         public IsEditable: Boolean) {
 
     }

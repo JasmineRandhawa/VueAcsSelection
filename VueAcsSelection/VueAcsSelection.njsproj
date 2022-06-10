@@ -34,6 +34,16 @@
   <ItemGroup>
     <Content Include="public\favicon.ico" />
     <Content Include="public\index.html" />
+    <Content Include="src\components\AcsComponent\ActionButton\ActionButton.css" />
+    <Content Include="src\components\AcsComponent\ActionButton\ActionButton.vue" />
+    <Content Include="src\components\AcsComponent\Block\Block.css" />
+    <Content Include="src\components\AcsComponent\Block\Block.vue" />
+    <Content Include="src\components\AcsComponent\Price\Price.css" />
+    <Content Include="src\components\AcsComponent\Price\Price.vue" />
+    <Content Include="src\components\AcsComponent\ProductLicense\ProductLicense.css" />
+    <Content Include="src\components\AcsComponent\ProductLicense\ProductLicense.vue" />
+    <Content Include="src\components\AcsComponent\StaticContent\StaticContent.css" />
+    <Content Include="src\components\AcsComponent\StaticContent\StaticContent.vue" />
     <Content Include="src\components\App\App.vue" />
     <Content Include="src\components\Common.css">
       <SubType>Code</SubType>
@@ -64,9 +74,15 @@
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\components\AcsComponent\Block\" />
+    <Folder Include="src\components\AcsComponent\ActionButton\" />
+    <Folder Include="src\components\AcsComponent\Price\" />
+    <Folder Include="src\components\AcsComponent\ProductLicense\" />
+    <Folder Include="src\components\AcsComponent\StaticContent\" />
     <Folder Include="src\components\App\" />
     <Folder Include="src\components\Home\" />
     <Folder Include="src\components\Banner\" />
+    <Folder Include="src\components\AcsComponent\" />
     <Folder Include="src\Interfaces\" />
     <Folder Include="src\Models\" />
     <Folder Include="src\Enumeration\" />
@@ -81,6 +97,14 @@
     <Content Include="babel.config.js" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\components\AcsComponent\ActionButton\ActionButton.ts" />
+    <TypeScriptCompile Include="src\components\AcsComponent\Block\Block.ts" />
+    <TypeScriptCompile Include="src\components\AcsComponent\Price\Price.ts" />
+    <TypeScriptCompile Include="src\components\AcsComponent\ProductLicense\ProductLicense.ts" />
+    <TypeScriptCompile Include="src\components\AcsComponent\StaticContent\StaticContent.ts" />
+    <TypeScriptCompile Include="src\Factory\AddControlFactory.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\Factory\DisplayControlFactory.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -97,6 +121,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\components\Home\Home.ts" />
+    <TypeScriptCompile Include="src\Models\ComponentTypeListItem.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

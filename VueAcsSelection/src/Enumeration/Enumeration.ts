@@ -1,14 +1,13 @@
 export enum ComponentType {
-    None,
+    Block,
     StaticContent,
     ProductLicense,
     Price,
-    ActionButton,
-    Container
+    ActionButton
 }
 
 export enum EditControlType {
-    None,
+    Div,
     SingleLineTextbox,
     List,
     MultiLineTextbox,
@@ -18,11 +17,12 @@ export enum EditControlType {
 
 
 export enum DisplayControlType {
-    None,
+    Div,
     Paragraph,
     Label,
     Heading,
-    Div,
-    Link
+    Link,
+    Button,
+    List
 }
 

@@ -61,8 +61,7 @@ export class EditControlFactory {
                 htmlElement.setAttribute("class", cssClass[2]);
                 break;
             default :
-                htmlElement = document.createElement('input');
-                htmlElement = document.createElement('text');
+                htmlElement = document.createElement('div');
                 htmlElement.setAttribute("class", cssClass[0]);
                 break;
         }

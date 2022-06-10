@@ -4,7 +4,10 @@
 
 <template>
     <div class="center" id="App">
-        <Banner msg="Hello world!" />
+        <button :disabled="isBannerAdded" class="btn btn-primary" @click="isBannerAdded=true" >Add Banner</button>
+        <br />
+        <br />
+        <Banner v-if="isBannerAdded" msg="Hello world!" />
         <Home msg="Hello world!" />
     </div>
 </template>

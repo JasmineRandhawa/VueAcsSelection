@@ -1,0 +1,16 @@
+.blockDiv {
+    background-color: lightgoldenrodyellow;
+    margin: 5px;
+    padding: 5px;
+}
+
+.floatRight {
+    float: right !important;
+}
+
+.bannerEditControl {
+    color: white;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+}

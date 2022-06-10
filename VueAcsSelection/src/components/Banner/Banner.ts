@@ -1,77 +1,128 @@
-import { ComponentType, EditControlType, DisplayControlType } from '../../../src/Enumeration/Enumeration'; }
+import { ComponentType, EditControlType, DisplayControlType } from '../../../src/Enumeration/Enumeration';
+import { Vue, Component } from 'vue-property-decorator';
 import { AcsComponent } from '../../../src/Models/AcsComponent';
-import {EditControlFactory}  from '../../../src/Factory/EditControlFactory';
-import { DisplayControlFactory } from '../../Factory/DisplayControlFactory';
+import { AddControlFactory } from '../../Factory/AddControlFactory';
+import { ComponentTypeListItem } from '../../Models/ComponentTypeListItem';
+import Block from '../AcsComponent/Block/Block.vue';
+import StaticContent from '../AcsComponent/StaticContent/StaticContent.vue';
 
-export default {
+@Component({
+    components: {
+        Block,
+        StaticContent
+    }
+})
+export default class Banner extends Vue {
+    AcsBannerComponents: AcsComponent[] = [];
+    BannerComponent?: Object | null;
+    IsComponentListShow: Boolean;
+    ComponentTypeList: ComponentTypeListItem[];
+    SelectedComponent: string;
+    constructor() {
+        super();
+        this.BannerComponent = null;
+        this.IsComponentListShow = false;
+        this.ComponentTypeList = [{ ComponentTypeId: "BL", ComponentTypeName: "Block" },
+            { ComponentTypeId: "PL", ComponentTypeName: "ProductLicense" },
+            { ComponentTypeId: "P", ComponentTypeName: "Price" },
+            { ComponentTypeId: "SC", ComponentTypeName: "StaticContent" },
+            { ComponentTypeId: "AB", ComponentTypeName: "ActionButton" }];
+        this.SelectedComponent = "Select";
+    }
+ 
+   mounted() {
+    var bannerDiv = document.getElementById("bannerDiv");
+    bannerDiv?.setAttribute("class", "bannerDiv");
 
-    props: ['AcsBanner'],
+    }
 
-    methods: {
-        InitalizeBanner() {
-            if (this.AcsBanner) {
-                this.CreateBannerControl(false);
-            }
-            else {
-                AcsBanner = new AcsComponent(
-                    "AcsBanner", //Component Id
+    CreateBannerControl(isEditMode: Boolean, acsComponent: AcsComponent): void {
+        //add html control dynamically
+        var bannerDiv = document.getElementById("bannerDiv");
+        if (bannerDiv) {
+            this.BannerComponent = AddControlFactory.Create(acsComponent, ["bannerDisplayControl center"]);
+            if (this.BannerComponent)
+                bannerDiv.appendChild(this.BannerComponent as HTMLElement);
+        }
+    }
+
+    ChangeComponentType() {
+        console.log(this, this.SelectedComponent);
+    }
+
+    showComponent(componentType:string, value: string) {
+        console.log(componentType, value);
+        if (componentType === value)
+            return true;
+        else return false;
+    }
+
+    addComponent()
+    {
+        var acsComponent = null;
+        switch (this.SelectedComponent) {
+            case "BL":
+                acsComponent = new AcsComponent(
+                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    ComponentType.Block, // ComponentType 
+                    EditControlType.List,// EditControlType  ,
+                    DisplayControlType.List, //DisplayControlType  ,
+                    "", // Display Text
+                    true, // isEditable
+                );
+                break;
+            case "SC":
+                acsComponent = new AcsComponent(
+                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
                     ComponentType.StaticContent, // ComponentType 
                     EditControlType.SingleLineTextbox,// EditControlType  ,
-                    DisplayControlType.Heading, //DisplayControlType  ,
+                    DisplayControlType.Label, //DisplayControlType  ,
                     "Print and download documents.", // Display Text
                     true, // isEditable
                 );
-            }
-        },
-
-        CreateBannerControl(isEditMode: Boolean): void {
-        //add html control dynamically
-        var bannerDiv = document.getElementById("bannerDiv");
-            if (bannerDiv) {
-
-                if (!isEditMode) {
-                    this.BannerComponent = DisplayControlFactory.Create(this.AcsBanner?.DisplayControlType, ["bannerDisplayControl"]);
-                    if (this.BannerComponent)
-                        this.BannerComponent.id = this.AcsBanner?.ComponentId + "_Display";
-                }
-                else {
-                    this.BannerComponent = EditControlFactory.Create(this.AcsBanner?.EditControlType, ["bannerEditControl"]);
-                    if (this.BannerComponent)
-                        this.BannerComponent.id = this.AcsBanner?.ComponentId + "_Edit";
-                }
-                if (this.BannerComponent)
-                    bannerDiv.appendChild(this.BannerComponent);
-            }
-        },
-
-        HideControl(elementId: string) {
-            var bannerDiv = document.getElementById("bannerDiv");
-            var element = bannerDiv?.querySelector("id=" + elementId);
-            if (element)
-                element.setAttribute("style", "display:none;");
+                break;
+            case "PL":
+                acsComponent = new AcsComponent(
+                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    ComponentType.ProductLicense, // ComponentType 
+                    EditControlType.List,// EditControlType  ,
+                    DisplayControlType.List, //DisplayControlType  ,
+                    "", // Display Text
+                    true, // isEditable
+                );
+                break;
+            case "AB":
+                acsComponent = new AcsComponent(
+                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    ComponentType.ActionButton, // ComponentType 
+                    EditControlType.Button,// EditControlType  ,
+                    DisplayControlType.Button, //DisplayControlType  ,
+                    "", // Display Text
+                    true, // isEditable
+                );
+                break;
+            case "P":
+                acsComponent = new AcsComponent(
+                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    ComponentType.Price, // ComponentType 
+                    EditControlType.SingleLineTextbox,// EditControlType  ,
+                    DisplayControlType.Label, //DisplayControlType  ,
+                    "", // Display Text
+                    true, // isEditable
+                );
+                break;
+            default:
+                acsComponent = new AcsComponent(
+                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    ComponentType.Block, // ComponentType 
+                    EditControlType.Div,// EditControlType  ,
+                    DisplayControlType.Div, //DisplayControlType  ,
+                    "", // Display Text
+                    true, // isEditable
+                );
+                break;
         }
-
-        SelectEditControlType() {
-            //get display control type dropdown and add it as a edit control type
-            this.AcsBanner.EditControlType = EditControlType.SingleLineTextbox;
-        }
-
-        Edit() {
-            //display control type dropdown
-            this.HideControl(this.AcsBanner?.ComponentId + "_Display")
-            this.CreateBannerControl(true);
-        }
-
-        Save() {
-            this.HideControl(this.AcsBanner?.ComponentId + "_Edit")
-            this.CreateBannerControl(true);
-            //update AcsBanner and emit its value to main save button on the layer
-            // set the display control type suitable for the edit control type selected.
-        }
+        this.AcsBannerComponents.push(acsComponent);
     }
-    
+};
 
-    
-
-    
-}

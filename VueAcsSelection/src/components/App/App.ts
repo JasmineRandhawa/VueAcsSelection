@@ -9,4 +9,11 @@ import Home from '../../components/Home/Home.vue';
     }
 })
 
-export default class App extends Vue { }    
+export default class App extends Vue {
+    isBannerAdded: Boolean;
+
+    constructor() {
+        super();
+        this.isBannerAdded = false;
+    }
+}    
