@@ -34,8 +34,8 @@
   <ItemGroup>
     <Content Include="public\favicon.ico" />
     <Content Include="public\index.html" />
-    <Content Include="src\components\acs-components\action-button\ActionButton.css" />
-    <Content Include="src\components\acs-components\action-button\ActionButton.vue" />
+    <Content Include="src\components\acs-components\action-button\action-button.css" />
+    <Content Include="src\components\acs-components\action-button\action-button.vue" />
     <Content Include="src\components\acs-components\block\block.css" />
     <Content Include="src\components\acs-components\block\block.vue" />
     <Content Include="src\components\acs-components\price\price..css" />
@@ -80,7 +80,7 @@
     <Content Include="babel.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\components\acs-components\action-button\ActionButton.ts" />
+    <TypeScriptCompile Include="src\components\acs-components\action-button\action-button.ts" />
     <TypeScriptCompile Include="src\components\acs-components\block\block.ts" />
     <TypeScriptCompile Include="src\components\acs-components\price\price..ts" />
     <TypeScriptCompile Include="src\components\acs-components\product-license\product-license.ts" />
