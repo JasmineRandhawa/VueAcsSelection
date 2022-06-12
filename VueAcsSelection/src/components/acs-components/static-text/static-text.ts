@@ -1,6 +1,6 @@
-import { ComponentType, EditControlType, DisplayControlType } from '../../../Enumeration/Enumeration';
 import { Vue, Component } from 'vue-property-decorator';
-import { AcsComponent } from '../../../Models/AcsComponent';
+import { ComponentType, EditControlType, DisplayControlType } from '../../../Enumeration/Enumeration';
+import { AcsComponent } from '../../../models/AcsComponent';
 
 @Component
 export default class StaticContent extends Vue {
@@ -8,7 +8,7 @@ export default class StaticContent extends Vue {
     constructor() {
         super();
         this.AcsComponent =  new AcsComponent(
-            "AcsBannerStatic" , //Component Id
+            "StaticContent" , //Component Id
             ComponentType.StaticContent, // ComponentType 
             EditControlType.SingleLineTextbox,// EditControlType  ,
             DisplayControlType.Label, //DisplayControlType  ,

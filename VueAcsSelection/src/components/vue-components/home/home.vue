@@ -1,12 +1,9 @@
-<script lang="ts" src="./Home.ts"></script>
+<script lang="ts" src="./home.ts"></script>
 
-<style>
-    @import "./Home.css";
-</style>
+<style> @import "./home.css";</style>
 
 <template>
     <div class="homeDiv">
-        <h1>{{ msg }}</h1>
         <p>Welcome to Selection Page</p>
     </div>
 </template>

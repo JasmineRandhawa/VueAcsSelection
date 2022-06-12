@@ -1,49 +1,41 @@
+import { Vue, Prop, Component } from 'vue-property-decorator';
+
+import staticText from '../../../components/acs-components/static-text/static-text.vue';
+import block from '../../../components/acs-components/block/block.vue';
+import { AcsComponent } from '../../../models/AcsComponent';
+import { ComponentTypeListItem } from '../../../models/ComponentTypeListItem';
 import { ComponentType, EditControlType, DisplayControlType } from '../../../Enumeration/Enumeration';
-import { Vue, Component } from 'vue-property-decorator';
-import { AcsComponent } from '../../../src/Models/AcsComponent';
-import { AddControlFactory } from '../../Factory/AddControlFactory';
-import { ComponentTypeListItem } from '../../Models/ComponentTypeListItem';
-import Block from '../AcsComponent/Block/Block.vue';
-import Block from '../AcsComponent/Block/Block.vue';
-import Block from '../AcsComponents/StaticContent/StaticContent.vue';
-import Block from '../AcsComponent/Block/Block.vue';
-import StaticContent from '../AcsComponent/StaticContent/StaticContent.vue';
 
 @Component({
     components: {
-        Block,
-        StaticContent,
-        Price,
-        ProductLicense,
-        ActionButton
+        block,
+        staticText
 
     }
 })
 export default class Banner extends Vue {
-    AcsBlockComponents: AcsComponent[] = [];
-    BlockComponent?: Object | null;
+    @Prop() private parent!: string;
+
+    BlockComponents: AcsComponent[] = [];
     IsComponentListShow: Boolean;
     ComponentTypeList: ComponentTypeListItem[];
     SelectedComponent: string;
+
     constructor() {
         super();
         this.IsComponentListShow = false;
         this.ComponentTypeList = [{ ComponentTypeId: "BL", ComponentTypeName: "Block" },
         { ComponentTypeId: "PL", ComponentTypeName: "ProductLicense" },
         { ComponentTypeId: "P", ComponentTypeName: "Price" },
-        { ComponentTypeId: "SC", ComponentTypeName: "StaticContent" },
+        { ComponentTypeId: "ST", ComponentTypeName: "StaticText" },
         { ComponentTypeId: "AB", ComponentTypeName: "ActionButton" }];
         this.SelectedComponent = "Select";
     }
 
     mounted() {
-        var bannerDiv = document.getElementById("bannerDiv");
-        bannerDiv?.setAttribute("class", "bannerDiv");
+        var blockDiv = document.getElementById("blockDiv");
+        blockDiv?.setAttribute("class", "blockDiv");
 
-    }
-
-    ChangeComponentType() {
-        console.log(this, this.SelectedComponent);
     }
 
     showComponent(componentType: string, value: string) {
@@ -58,7 +50,7 @@ export default class Banner extends Vue {
         switch (this.SelectedComponent) {
             case "BL":
                 acsComponent = new AcsComponent(
-                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.Block, // ComponentType 
                     EditControlType.List,// EditControlType  ,
                     DisplayControlType.List, //DisplayControlType  ,
@@ -66,9 +58,9 @@ export default class Banner extends Vue {
                     true, // isEditable
                 );
                 break;
-            case "SC":
+            case "ST":
                 acsComponent = new AcsComponent(
-                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.StaticContent, // ComponentType 
                     EditControlType.SingleLineTextbox,// EditControlType  ,
                     DisplayControlType.Label, //DisplayControlType  ,
@@ -78,7 +70,7 @@ export default class Banner extends Vue {
                 break;
             case "PL":
                 acsComponent = new AcsComponent(
-                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.ProductLicense, // ComponentType 
                     EditControlType.List,// EditControlType  ,
                     DisplayControlType.List, //DisplayControlType  ,
@@ -88,7 +80,7 @@ export default class Banner extends Vue {
                 break;
             case "AB":
                 acsComponent = new AcsComponent(
-                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.ActionButton, // ComponentType 
                     EditControlType.Button,// EditControlType  ,
                     DisplayControlType.Button, //DisplayControlType  ,
@@ -98,7 +90,7 @@ export default class Banner extends Vue {
                 break;
             case "P":
                 acsComponent = new AcsComponent(
-                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
+                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.Price, // ComponentType 
                     EditControlType.SingleLineTextbox,// EditControlType  ,
                     DisplayControlType.Label, //DisplayControlType  ,
@@ -107,17 +99,10 @@ export default class Banner extends Vue {
                 );
                 break;
             default:
-                acsComponent = new AcsComponent(
-                    "AcsBanner" + this.AcsBannerComponents.length + "", //Component Id
-                    ComponentType.Block, // ComponentType 
-                    EditControlType.Div,// EditControlType  ,
-                    DisplayControlType.Div, //DisplayControlType  ,
-                    "", // Display Text
-                    true, // isEditable
-                );
                 break;
         }
-        this.AcsBannerComponents.push(acsComponent);
+        if (acsComponent)
+            this.BlockComponents.push(acsComponent);
     }
 };
 

@@ -1,6 +1,6 @@
-import { ComponentType, EditControlType, DisplayControlType } from '../../../../src/Enumeration/Enumeration';
 import { Vue, Component } from 'vue-property-decorator';
-import { AcsComponent } from '../../../Models/AcsComponent';
+import { ComponentType, EditControlType, DisplayControlType } from '../../../Enumeration/Enumeration';
+import { AcsComponent } from '../../../models/AcsComponent';
 
 @Component
 export default class Price extends Vue {
@@ -8,7 +8,7 @@ export default class Price extends Vue {
     constructor() {
         super();
         this.AcsComponent = new AcsComponent(
-            "AcsBanner", //Component Id
+            "Price", //Component Id
             ComponentType.Block, // ComponentType 
             EditControlType.Div,// EditControlType  ,
             DisplayControlType.Div, //DisplayControlType  ,

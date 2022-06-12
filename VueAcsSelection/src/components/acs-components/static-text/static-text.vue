@@ -1,7 +1,7 @@
-<script lang="ts" src="./StaticContent.ts"></script>
+<script lang="ts" src="./static-text.ts"></script>
 
 <style>
-    @import "./StaticContent.css";
+    @import "./static-text.css";
 </style>
 
 

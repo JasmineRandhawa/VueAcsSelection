@@ -1,11 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator';
-import Banner from '../../components/Banner/Banner.vue';
-import Home from '../../components/Home/Home.vue';
+import home from '../../vue-components/banner/home.vue';
+import banner from '../../vue-components/banner/banner.vue';
 
 @Component({
     components: {
-        Banner,
-        Home,
+        home,
+        banner,
     }
 })
 

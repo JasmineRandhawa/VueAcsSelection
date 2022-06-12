@@ -1,12 +1,12 @@
-<script lang="ts" src="./App.ts"></script>
+<script lang="ts" src="./app.ts"></script>
 
-<style> @import "./App.css"; </style>
+<style>@import "./app.css";</style>
 
 <template>
-    <div class="center" id="App">
-        <button :disabled="isBannerAdded" class="btn btn-primary" @click="isBannerAdded=true" >Add Banner</button>
-        <br />
-        <br />
+    <div class="center menuDiv" id="menu">
+        <button :disabled="isBannerAdded" class="btn btn-primary" @click="isBannerAdded=true">Add Banner</button>
+    </div>
+    <div class="center" id="app">
         <Banner v-if="isBannerAdded" msg="Hello world!" />
         <Home msg="Hello world!" />
     </div>
