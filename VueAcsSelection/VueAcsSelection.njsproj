@@ -34,8 +34,8 @@
   <ItemGroup>
     <Content Include="public\favicon.ico" />
     <Content Include="public\index.html" />
-    <Content Include="src\components\AcsComponent\ActionButton\ActionButton.css" />
-    <Content Include="src\components\AcsComponent\ActionButton\ActionButton.vue" />
+    <Content Include="src\components\AcsComponent\action-button\action-button.css" />
+    <Content Include="src\components\AcsComponent\action-button\action-button.vue" />
     <Content Include="src\components\AcsComponent\Block\Block.css" />
     <Content Include="src\components\AcsComponent\Block\Block.vue" />
     <Content Include="src\components\AcsComponent\Price\Price.css" />
@@ -75,7 +75,7 @@
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
     <Folder Include="src\components\AcsComponent\Block\" />
-    <Folder Include="src\components\AcsComponent\ActionButton\" />
+    <Folder Include="src\components\AcsComponent\action-button\" />
     <Folder Include="src\components\AcsComponent\Price\" />
     <Folder Include="src\components\AcsComponent\ProductLicense\" />
     <Folder Include="src\components\AcsComponent\StaticContent\" />
@@ -97,7 +97,7 @@
     <Content Include="babel.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\components\AcsComponent\ActionButton\ActionButton.ts" />
+    <TypeScriptCompile Include="src\components\AcsComponent\action-button\action-button.ts" />
     <TypeScriptCompile Include="src\components\AcsComponent\Block\Block.ts" />
     <TypeScriptCompile Include="src\components\AcsComponent\Price\Price.ts" />
     <TypeScriptCompile Include="src\components\AcsComponent\ProductLicense\ProductLicense.ts" />
