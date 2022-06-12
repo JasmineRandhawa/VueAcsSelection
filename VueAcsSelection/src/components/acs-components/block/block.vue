@@ -23,10 +23,10 @@
         <br />
         <div id="componentDiv">
             <div v-for="component in BlockComponents" :key="component.ComponentId" :value="component">
-                <block parent ="{this.parent + 'Block'}" />
+                <block parent="{this.Parent + 'Block'}" />
                 <br />
                 <staticText />
-                {{JSON.stringify(component)}} {{this.parent}}
+                {{JSON.stringify(component)}} {{this.Parent}}
             </div>
         </div>
     </div>

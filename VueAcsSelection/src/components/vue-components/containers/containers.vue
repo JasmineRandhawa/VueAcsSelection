@@ -6,8 +6,10 @@
 
 <template>
     <div id="containersDiv">
-        <div v-for="container in Containers" :key="component.ComponentId" :value="component">
-            <block acsComponent="component" parent="container" />
+        <div class="containerDiv">
+            <div v-for="container in Containers" :key="container.ComponentId" :value="container">
+                <Block  Parent="Parent + ''Container''" />
+            </div>
         </div>
     </div>
 </template>

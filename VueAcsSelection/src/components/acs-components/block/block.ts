@@ -14,7 +14,7 @@ import { ComponentType, EditControlType, DisplayControlType } from '../../../enu
     }
 })
 export default class Banner extends Vue {
-    @Prop() private parent!: string;
+    @Prop() private Parent!: string;
 
     BlockComponents: AcsComponent[] = [];
     IsComponentListShow: Boolean;
@@ -50,7 +50,7 @@ export default class Banner extends Vue {
         switch (this.SelectedComponent) {
             case "BL":
                 acsComponent = new AcsComponent(
-                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
+                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.Block, // ComponentType 
                     EditControlType.List,// EditControlType  ,
                     DisplayControlType.List, //DisplayControlType  ,
@@ -70,7 +70,7 @@ export default class Banner extends Vue {
                 break;
             case "PL":
                 acsComponent = new AcsComponent(
-                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
+                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.ProductLicense, // ComponentType 
                     EditControlType.List,// EditControlType  ,
                     DisplayControlType.List, //DisplayControlType  ,
@@ -80,7 +80,7 @@ export default class Banner extends Vue {
                 break;
             case "AB":
                 acsComponent = new AcsComponent(
-                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
+                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.ActionButton, // ComponentType 
                     EditControlType.Button,// EditControlType  ,
                     DisplayControlType.Button, //DisplayControlType  ,
@@ -90,7 +90,7 @@ export default class Banner extends Vue {
                 break;
             case "P":
                 acsComponent = new AcsComponent(
-                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
+                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.Price, // ComponentType 
                     EditControlType.SingleLineTextbox,// EditControlType  ,
                     DisplayControlType.Label, //DisplayControlType  ,

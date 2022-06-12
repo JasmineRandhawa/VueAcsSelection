@@ -6,7 +6,7 @@
     <div class="bannerDiv">
         <div id="componentDiv">
             <div v-for="component in BannerComponents" :key="component.ComponentId" :value="component">
-                <block acsComponent="component" parent="banner" />
+                <Block Parent="Parent + ''Container''" />
             </div>
         </div>
     </div>
