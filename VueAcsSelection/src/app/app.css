@@ -1,7 +1,117 @@
 @import "../main.css";
 
-.menuDiv
-{
-    background-color : cornsilk;
-    padding-bottom :50px;
+.appDiv {
+    border: solid;
+    height: auto;
+    font-family: 'Lucida Sans !important'
 }
+
+.layerButton {
+    background-color: white;
+    color: cadetblue;
+    text-align: center;
+    font-weight: bold;
+    padding: 3px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    border: 1px solid cadetblue;
+    transition-duration: 0.4s;
+}
+
+.layerButton:hover {
+    background-color: cadetblue;
+    color: white;
+}
+
+.menuVariationDiv {
+    background-color: cornsilk;
+    width: stretch;
+    height: auto;
+    margin-top: 10px;
+    padding-left: 10px;
+    border: black solid 1px;
+    height: auto;
+    padding-bottom:10px;
+}
+
+.menuDiv {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 50px;
+    padding-top: 10px;
+}
+
+.variationListSpan {
+    color: cadetblue;
+    text-align: center;
+    font-size:small;
+    font-weight: bold;
+    font-family:'Lucida Sans' !important;
+}
+
+.variationList {
+    padding-inline-start: 0px !important;
+    margin-block-start: 0px !important;
+    margin-block-end: 0px !important;
+}
+
+.listButtons {
+    background-color: white;
+    color: cadetblue;
+    text-align: center;
+    font-weight: bold;
+    padding: 3px;
+    cursor: pointer;
+    border: 1px solid cadetblue;
+    transition-duration: 0.4s;
+    font-family: 'Lucida Sans !important';
+    display: inline-block;
+    padding-top:10px !important;
+}
+
+.listItem {
+    padding-top: 10px;
+    height: 30px;
+    width:60px;
+}
+
+.listItemSelection {
+    background-color: cadetblue;
+    color: white;
+}
+
+.menuListButtons{
+    width:100px;
+}
+
+ .menuListButtons:hover {
+     background-color: cadetblue;
+     color: white;
+ }
+
+.disabledMenuButton {
+    pointer-events: none;
+    background-color: darkgray;
+    color:white;
+}
+
+.bannerDiv {
+    background-color: cadetblue;
+    color:white;
+    border: black solid 1px;
+    width: stretch;
+    height: auto;
+    padding: 0pc !important;
+    font-family: 'Lucida Sans !important';
+}
+
+.containerDiv {
+    background-color: white;
+    border: black solid 1px;
+    width: stretch;
+    height: auto;
+    padding: 0pc !important;
+    font-family: 'Lucida Sans !important';
+}
+ 

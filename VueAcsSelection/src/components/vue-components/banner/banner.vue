@@ -7,7 +7,6 @@
         <div id="componentDiv">
             <div v-for="component in BannerComponents" :key="component.ComponentId" :value="component">
                 <block acsComponent="component" parent="banner" />
-                {{JSON.stringify(component)}}
             </div>
         </div>
     </div>

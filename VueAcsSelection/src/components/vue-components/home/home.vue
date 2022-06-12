@@ -4,6 +4,5 @@
 
 <template>
     <div class="homeDiv">
-        <p>Welcome to Selection Page</p>
     </div>
 </template>

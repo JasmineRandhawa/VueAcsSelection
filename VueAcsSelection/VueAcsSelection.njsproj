@@ -92,6 +92,9 @@
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\models\AcsComponent.ts" />
     <TypeScriptCompile Include="src\models\ComponentTypeListItem.ts" />
+    <TypeScriptCompile Include="src\models\ListItem.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\shims-tsx.d.ts" />
     <TypeScriptCompile Include="src\shims-vue.d.ts" />
   </ItemGroup>
