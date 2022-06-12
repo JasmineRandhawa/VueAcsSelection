@@ -35,7 +35,7 @@
                     <span class="variationListSpan">Actions</span>
                     <ul class="variationList">
                         <li id="menuList" v-for="menuListItem in MenuButtonList" :key="menuListItem.Name" :value="menuListItem"
-                            v-bind:class="{'listButtons listItem menuListButtons':true, '   ':(menuListItem.Disabled)}"
+                            v-bind:class="{'listButtons listItem menuListButtons':true, 'disabledMenuButton':(menuListItem.Disabled)}"
                             @click="changeMenu(menuListItem)">
                             {{menuListItem.DisplayText}}
                         </li>
