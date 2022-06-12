@@ -1,4 +1,4 @@
-import { ComponentType, EditControlType, DisplayControlType } from '../../../../src/Enumeration/Enumeration';
+import { ComponentType, EditControlType, DisplayControlType } from '../../../Enumeration/Enumeration';
 import { Vue, Component } from 'vue-property-decorator';
 import { AcsComponent } from '../../../Models/AcsComponent';
 
