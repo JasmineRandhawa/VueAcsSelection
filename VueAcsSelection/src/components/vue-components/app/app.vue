@@ -9,7 +9,10 @@
 
         <!--Layer Button-->
         <div>
-            <button :disabled="IsLayerAdded" class="layerButton" @click="IsLayerAdded=true"> + Layer</button>
+            <button :disabled="IsLayerAdded" @click="IsLayerAdded=true"
+                    v-bind:class="{'layerButton':true, 'disabledMenuButton':(IsLayerAdded)}">
+                + Layer
+            </button>
         </div>
 
         <!--Layer Section-->
@@ -42,17 +45,22 @@
                     </ul>
                 </div>
             </div>
-            <br />
-            <br />
-
             <!--Banner Section-->
-            <div class="bannerDiv" v-if="IsBannerAdded" id="bannerSection">
-                <banner />
+            <div v-if="IsBannerAdded">
+                <br />
+                <br />
+                <div class="bannerDiv" id="bannerSection">
+                    <Banner Parent="Layer"/>
+                </div>
             </div>
 
             <!--Container Section-->
-            <div class="containerDiv" v-if="IsContainerAdded" id="containerSection">
-                <home />
+            <div v-if="IsContainerAdded">
+                <br />
+                <br />
+                <div class="containerDiv" id="containerSection">
+                    <Containers Parent="Layer" />
+                </div>
             </div>
         </div>
     </div>

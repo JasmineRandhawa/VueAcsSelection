@@ -3,7 +3,7 @@
 <style>    @import "./banner.css";</style>
 
 <template>
-    <div id="bannerDiv">
+    <div class="bannerDiv">
         <div id="componentDiv">
             <div v-for="component in BannerComponents" :key="component.ComponentId" :value="component">
                 <block acsComponent="component" parent="banner" />

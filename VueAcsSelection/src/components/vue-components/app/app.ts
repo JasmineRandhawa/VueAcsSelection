@@ -1,12 +1,12 @@
 import { Component, Vue } from 'vue-property-decorator';
-import home from '../components/vue-components/home/home.vue';
-import banner from '../components/vue-components/banner/banner.vue';
-import { ListItem } from '../models/ListItem';
+import Containers from '../containers/containers.vue';
+import Banner from  '../banner/banner.vue';
+import { ListItem } from '../../../models/ListItem';
 
 @Component({
     components: {
-        home,
-        banner,
+        Containers,
+        Banner,
     }
 })
 
@@ -32,7 +32,6 @@ export default class App extends Vue {
 
     changeVariation(variation: ListItem) {
         this.SelectionVariation = variation;
-        console.log(variation);
     }
 
     changeMenu(menuItem: ListItem) {
