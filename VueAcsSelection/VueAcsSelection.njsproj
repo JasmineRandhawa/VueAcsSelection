@@ -34,34 +34,23 @@
   <ItemGroup>
     <Content Include="public\favicon.ico" />
     <Content Include="public\index.html" />
-    <Content Include="src\components\AcsComponent\action-button\action-button.css" />
-    <Content Include="src\components\AcsComponent\action-button\action-button.vue" />
-    <Content Include="src\components\AcsComponent\Block\Block.css" />
-    <Content Include="src\components\AcsComponent\Block\Block.vue" />
-    <Content Include="src\components\AcsComponent\Price\Price.css" />
-    <Content Include="src\components\AcsComponent\Price\Price.vue" />
-    <Content Include="src\components\AcsComponent\ProductLicense\ProductLicense.css" />
-    <Content Include="src\components\AcsComponent\ProductLicense\ProductLicense.vue" />
-    <Content Include="src\components\AcsComponent\StaticContent\StaticContent.css" />
-    <Content Include="src\components\AcsComponent\StaticContent\StaticContent.vue" />
-    <Content Include="src\components\App\App.vue" />
-    <Content Include="src\components\Common.css">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\components\Banner\Banner.css">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\components\Banner\Banner.vue">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\components\Home\Home.css" />
-    <Content Include="src\components\Home\Home.vue" />
-    <Content Include="src\components\App\App.css">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="src\Enumeration\Enumeration.ts">
-      <SubType>Code</SubType>
-    </Content>
+    <Content Include="src\components\acs-components\action-button\ActionButton.css" />
+    <Content Include="src\components\acs-components\action-button\ActionButton.vue" />
+    <Content Include="src\components\acs-components\block\block.css" />
+    <Content Include="src\components\acs-components\block\block.vue" />
+    <Content Include="src\components\acs-components\price\price..css" />
+    <Content Include="src\components\acs-components\price\price.vue" />
+    <Content Include="src\components\acs-components\product-license\product-license.css" />
+    <Content Include="src\components\acs-components\product-license\product-license.vue" />
+    <Content Include="src\components\acs-components\static-text\static-text.css" />
+    <Content Include="src\components\acs-components\static-text\static-text.vue" />
+    <Content Include="src\components\vue-components\app\app.css.css" />
+    <Content Include="src\components\vue-components\app\app.vue" />
+    <Content Include="src\components\vue-components\banner\banner.css.css" />
+    <Content Include="src\components\vue-components\banner\banner.vue" />
+    <Content Include="src\components\vue-components\home\home.css.css" />
+    <Content Include="src\components\vue-components\home\home.vue" />
+    <Content Include="src\main.css.css" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
@@ -72,58 +61,39 @@
   <ItemGroup>
     <Folder Include="public\" />
     <Folder Include="src\" />
-    <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
-    <Folder Include="src\components\AcsComponent\Block\" />
-    <Folder Include="src\components\AcsComponent\action-button\" />
-    <Folder Include="src\components\AcsComponent\Price\" />
-    <Folder Include="src\components\AcsComponent\ProductLicense\" />
-    <Folder Include="src\components\AcsComponent\StaticContent\" />
-    <Folder Include="src\components\App\" />
-    <Folder Include="src\components\Home\" />
-    <Folder Include="src\components\Banner\" />
-    <Folder Include="src\components\AcsComponent\" />
-    <Folder Include="src\Interfaces\" />
-    <Folder Include="src\Models\" />
-    <Folder Include="src\Enumeration\" />
-    <Folder Include="src\Factory\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="src\main.ts" />
-    <None Include="src\shims-vue.d.ts" />
-    <None Include="src\shims-tsx.d.ts" />
+    <Folder Include="src\components\acs-components\" />
+    <Folder Include="src\components\acs-components\action-button\" />
+    <Folder Include="src\components\acs-components\block\" />
+    <Folder Include="src\components\acs-components\price\" />
+    <Folder Include="src\components\acs-components\product-license\" />
+    <Folder Include="src\components\acs-components\static-text\" />
+    <Folder Include="src\components\vue-components\" />
+    <Folder Include="src\components\vue-components\app\" />
+    <Folder Include="src\components\vue-components\banner\" />
+    <Folder Include="src\components\vue-components\home\" />
+    <Folder Include="src\enumeration\" />
+    <Folder Include="src\interfaces\" />
+    <Folder Include="src\models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="babel.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\components\AcsComponent\action-button\action-button.ts" />
-    <TypeScriptCompile Include="src\components\AcsComponent\Block\Block.ts" />
-    <TypeScriptCompile Include="src\components\AcsComponent\Price\Price.ts" />
-    <TypeScriptCompile Include="src\components\AcsComponent\ProductLicense\ProductLicense.ts" />
-    <TypeScriptCompile Include="src\components\AcsComponent\StaticContent\StaticContent.ts" />
-    <TypeScriptCompile Include="src\Factory\AddControlFactory.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="src\Factory\DisplayControlFactory.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="src\Factory\EditControlFactory.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="src\Models\AcsComponent.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="src\components\App\App.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="src\components\Banner\Banner.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="src\components\Home\Home.ts" />
-    <TypeScriptCompile Include="src\Models\ComponentTypeListItem.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\components\acs-components\action-button\ActionButton.ts" />
+    <TypeScriptCompile Include="src\components\acs-components\block\block.ts" />
+    <TypeScriptCompile Include="src\components\acs-components\price\price..ts" />
+    <TypeScriptCompile Include="src\components\acs-components\product-license\product-license.ts" />
+    <TypeScriptCompile Include="src\components\acs-components\static-text\static-text.ts" />
+    <TypeScriptCompile Include="src\components\vue-components\app\app.ts.ts" />
+    <TypeScriptCompile Include="src\components\vue-components\banner\banner.ts.ts" />
+    <TypeScriptCompile Include="src\components\vue-components\home\home.ts.ts" />
+    <TypeScriptCompile Include="src\enumeration\Enumeration.ts" />
+    <TypeScriptCompile Include="src\main.ts.ts" />
+    <TypeScriptCompile Include="src\models\AcsComponent.ts" />
+    <TypeScriptCompile Include="src\models\ComponentTypeListItem.ts" />
+    <TypeScriptCompile Include="src\shims-tsx.d.ts" />
+    <TypeScriptCompile Include="src\shims-vue.d.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
