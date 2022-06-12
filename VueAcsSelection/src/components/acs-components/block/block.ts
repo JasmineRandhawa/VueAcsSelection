@@ -4,7 +4,7 @@ import staticText from '../../../components/acs-components/static-text/static-te
 import block from '../../../components/acs-components/block/block.vue';
 import { AcsComponent } from '../../../models/AcsComponent';
 import { ComponentTypeListItem } from '../../../models/ComponentTypeListItem';
-import { ComponentType, EditControlType, DisplayControlType } from '../../../Enumeration/Enumeration';
+import { ComponentType, EditControlType, DisplayControlType } from '../../../enumeration/Enumeration';
 
 @Component({
     components: {

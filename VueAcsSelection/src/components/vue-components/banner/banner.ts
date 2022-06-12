@@ -1,5 +1,5 @@
 import { Vue, Component } from 'vue-property-decorator';
-import { ComponentType, DisplayControlType, EditControlType } from '../../../Enumeration/Enumeration';
+import { ComponentType, DisplayControlType, EditControlType } from '../../../enumeration/Enumeration';
 import { AcsComponent } from '../../../models/AcsComponent';
 import block from '../../acs-components/block/block.vue';
 

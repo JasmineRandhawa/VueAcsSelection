@@ -1,6 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator';
-import home from '../../vue-components/banner/home.vue';
-import banner from '../../vue-components/banner/banner.vue';
+import home from '../components/vue-components/home/home.vue';
+import banner from '../components/vue-components/banner/banner.vue';
 
 @Component({
     components: {
@@ -15,5 +15,5 @@ export default class App extends Vue {
     constructor() {
         super();
         this.isBannerAdded = false;
-    }
+    } 
 }    
