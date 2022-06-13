@@ -109,7 +109,7 @@
 .containerDiv {
     background-color: white;
     border: black solid 1px;
-    width: stretch;
+    width: 300px;
     height: auto;
     padding: 0pc !important;
     font-family: 'Lucida Sans !important';

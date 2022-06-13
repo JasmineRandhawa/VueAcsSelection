@@ -1,6 +1,6 @@
 .containersDiv {
     border: 1px, solid black;
-    width: 100px;
+    width: auto;
     height: 100px;
     padding: 10px;
 }

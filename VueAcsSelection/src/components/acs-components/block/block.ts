@@ -1,53 +1,53 @@
 import { Vue, Prop, Component } from 'vue-property-decorator';
 
-import staticText from '../../../components/acs-components/static-text/static-text.vue';
-import block from '../../../components/acs-components/block/block.vue';
+import StaticText from '../../../components/acs-components/static-text/static-text.vue';
+import Block from '../../../components/acs-components/block/block.vue';
 import { AcsComponent } from '../../../models/AcsComponent';
 import { ComponentTypeListItem } from '../../../models/ComponentTypeListItem';
 import { ComponentType, EditControlType, DisplayControlType } from '../../../enumeration/Enumeration';
 
 @Component({
     components: {
-        block,
-        staticText
+        Block,
+        StaticText
 
     }
 })
 export default class Banner extends Vue {
     @Prop() private Parent!: string;
 
-    BlockComponents: AcsComponent[] = [];
+    BlockComponents: AcsComponent[];
     IsComponentListShow: Boolean;
     ComponentTypeList: ComponentTypeListItem[];
-    SelectedComponent: string;
+    SelectedComponent: ComponentTypeListItem;
 
     constructor() {
         super();
         this.IsComponentListShow = false;
+        this.BlockComponents = [];
         this.ComponentTypeList = [{ ComponentTypeId: "BL", ComponentTypeName: "Block" },
-        { ComponentTypeId: "PL", ComponentTypeName: "ProductLicense" },
+        { ComponentTypeId: "PL", ComponentTypeName: "Produc tLicense" },
         { ComponentTypeId: "P", ComponentTypeName: "Price" },
-        { ComponentTypeId: "ST", ComponentTypeName: "StaticText" },
-        { ComponentTypeId: "AB", ComponentTypeName: "ActionButton" }];
-        this.SelectedComponent = "Select";
+        { ComponentTypeId: "ST", ComponentTypeName: "Static Text" },
+            { ComponentTypeId: "AB", ComponentTypeName: "Action Button" },
+            { ComponentTypeId: "SL", ComponentTypeName: "Static List" },
+            { ComponentTypeId: "PG", ComponentTypeName: "Paragraph" },
+            { ComponentTypeId: "RB", ComponentTypeName: "RadioButton" },
+            { ComponentTypeId: "IMG", ComponentTypeName: "Image" },
+            { ComponentTypeId: "CB", ComponentTypeName: "CheckBox" }];
+        this.SelectedComponent = { ComponentTypeId: "Select", ComponentTypeName: "Select" };
     }
 
-    mounted() {
-        var blockDiv = document.getElementById("blockDiv");
-        blockDiv?.setAttribute("class", "blockDiv");
-
-    }
-
-    showComponent(componentType: string, value: string) {
+    ShowComponent(componentType: string, value: string) {
         console.log(componentType, value);
         if (componentType === value)
             return true;
         else return false;
     }
 
-    addComponent() {
+    AddComponent() {
         var acsComponent = null;
-        switch (this.SelectedComponent) {
+        switch (this.SelectedComponent.ComponentTypeId) {
             case "BL":
                 acsComponent = new AcsComponent(
                     this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
@@ -57,52 +57,20 @@ export default class Banner extends Vue {
                     "", // Display Text
                     true, // isEditable
                 );
+                this.BlockComponents.push(acsComponent);
                 break;
             case "ST":
                 acsComponent = new AcsComponent(
-                    this.parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
+                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.StaticContent, // ComponentType 
                     EditControlType.SingleLineTextbox,// EditControlType  ,
                     DisplayControlType.Label, //DisplayControlType  ,
                     "Print and download documents.", // Display Text
                     true, // isEditable
                 );
+                this.BlockComponents.push(acsComponent);
                 break;
-            case "PL":
-                acsComponent = new AcsComponent(
-                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
-                    ComponentType.ProductLicense, // ComponentType 
-                    EditControlType.List,// EditControlType  ,
-                    DisplayControlType.List, //DisplayControlType  ,
-                    "", // Display Text
-                    true, // isEditable
-                );
-                break;
-            case "AB":
-                acsComponent = new AcsComponent(
-                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
-                    ComponentType.ActionButton, // ComponentType 
-                    EditControlType.Button,// EditControlType  ,
-                    DisplayControlType.Button, //DisplayControlType  ,
-                    "", // Display Text
-                    true, // isEditable
-                );
-                break;
-            case "P":
-                acsComponent = new AcsComponent(
-                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
-                    ComponentType.Price, // ComponentType 
-                    EditControlType.SingleLineTextbox,// EditControlType  ,
-                    DisplayControlType.Label, //DisplayControlType  ,
-                    "", // Display Text
-                    true, // isEditable
-                );
-                break;
-            default:
-                break;
-        }
-        if (acsComponent)
-            this.BlockComponents.push(acsComponent);
+        }          
     }
 };
 

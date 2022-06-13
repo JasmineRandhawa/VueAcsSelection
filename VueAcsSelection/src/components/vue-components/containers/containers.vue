@@ -8,7 +8,7 @@
     <div id="containersDiv">
         <div class="containerDiv">
             <div v-for="container in Containers" :key="container.ComponentId" :value="container">
-                <Block  Parent="Parent + ''Container''" />
+                <Block Parent="Parent + ''Container''" />
             </div>
         </div>
     </div>

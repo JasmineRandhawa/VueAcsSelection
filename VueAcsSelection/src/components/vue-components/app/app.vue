@@ -27,7 +27,7 @@
                     <ul class="variationList">
                         <li id="menuList" v-for="variation in VariationList" :key="variation.Name" :value="variation"
                             v-bind:class="{'listButtons listItem':true, 'listItemSelection':(variation.Name === SelectionVariation.Name)}"
-                            @click="changeVariation(variation)">
+                            @click="ChangeVariation(variation)">
                             {{variation.DisplayText}}
                         </li>
                     </ul>
@@ -39,7 +39,7 @@
                     <ul class="variationList">
                         <li id="menuList" v-for="menuListItem in MenuButtonList" :key="menuListItem.Name" :value="menuListItem"
                             v-bind:class="{'listButtons listItem menuListButtons':true, 'disabledMenuButton':(menuListItem.Disabled)}"
-                            @click="changeMenu(menuListItem)">
+                            @click="ChangeMenu(menuListItem)">
                             {{menuListItem.DisplayText}}
                         </li>
                     </ul>
@@ -55,11 +55,11 @@
             </div>
 
             <!--Container Section-->
-            <div v-if="IsContainerAdded">
+            <div v-if="ContainersArray.length>0">
                 <br />
                 <br />
                 <div class="containerDiv" id="containerSection">
-                    <Containers Parent="Layer" />
+                    <Containers ContainersJsonString="GetContainerJsonString" Parent="Layer" />
                 </div>
             </div>
         </div>

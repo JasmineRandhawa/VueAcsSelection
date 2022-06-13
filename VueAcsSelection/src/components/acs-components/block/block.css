@@ -1,16 +1,15 @@
 .blockDiv {
-    background-color: inherit;
-    margin: 5px;
+    background-color: azure;
     padding: 5px;
+    height : 40px;
+}
+
+#blockDiv {
+    height: auto;
+    background-color: azure;
 }
 
 .floatRight {
     float: right !important;
 }
 
-.bannerEditControl {
-    color: white;
-    text-align: center;
-    font-size: medium;
-    font-weight: bold;
-}
