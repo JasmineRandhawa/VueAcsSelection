@@ -6,7 +6,6 @@
 
 <template>
     <div class="bannerContainerDiv">
-        {{"Parent : " + Parent + "_Banner"}}
         <Container :Parent="Parent + '_Banner_Container'" :IsBanner="true"/>
     </div>
 </template>

@@ -1,14 +1,19 @@
 .containerDiv {
     border: 1px, solid black;
-    width:350px;
-    height: auto;
-    padding: 10px;
+    width: 350px;
+    height: auto; 
 }
 
 .blockDiv {
     background-color: azure;
-    padding: 5px;
     height: 40px;
+
+}
+
+.innerContainerDiv {
+    padding: 10px;
+    display:block;
+    margin-top: 30px;
 }
 
 .blockButton {
@@ -22,7 +27,8 @@
     cursor: pointer;
     border: 1px solid cadetblue;
     transition-duration: 0.4s;
-    float:right;
+    float: right;
+    display: block;
 }
 
 .layerButton:hover {

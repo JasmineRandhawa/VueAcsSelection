@@ -6,8 +6,9 @@
 
 <template>
     <div  v-if="Containers.length>0">
-        <div v-for="container in Containers" :key="container.ComponentId" 
-            class="containerDiv" >
+        <div v-for="container in Containers" :key="container.ComponentId"
+             class="containerDiv">
+            {{"Parent :" + container.ComponentId}}
             <Container :Parent="container.ComponentId" :IsBanner="IsBanner" />
         </div>
     </div>

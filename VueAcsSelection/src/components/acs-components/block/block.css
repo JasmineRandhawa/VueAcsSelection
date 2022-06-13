@@ -1,12 +1,13 @@
 .blockDiv {
     background-color: azure;
-    padding: 5px;
     height : 40px;
+
 }
 
 #blockDiv {
     height: auto;
     background-color: azure;
+    border: 1px solid black;
 }
 
 .floatRight {
