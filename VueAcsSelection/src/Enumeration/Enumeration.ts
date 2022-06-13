@@ -1,5 +1,6 @@
 export enum ComponentType {
     Block,
+    Container,
     StaticContent,
     ProductLicense,
     Price,

@@ -46,6 +46,8 @@ export default class App extends Vue {
             case "Container":
                 ++this.ContainersCount;
                 break;
+            default:
+                break;
         }
     }
 }    
