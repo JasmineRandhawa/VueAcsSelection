@@ -49,8 +49,9 @@
             <div v-if="IsBannerAdded">
                 <br />
                 <br />
+                {{"Parent of Banner Section: "+ 'Layer'}}
                 <div class="bannerDiv" id="bannerSection">
-                    <Banner :Parent="Layer"/>
+                    <Banner :Parent="'Layer'" />
                 </div>
             </div>
 
@@ -58,8 +59,9 @@
             <div v-if="ContainersCount>0">
                 <br />
                 <br />
-                <div class="containerDiv" id="containerSection">
-                    <Containers :ContainersCount="ContainersCount" :Parent="'Layer'" />
+                {{"Parent of Containers Section : "+ 'Layer'}}
+                <div class="containersDiv" id="containerSection">
+                    <Containers :ContainersCount="ContainersCount" :Parent="'Layer'" :IsBanner="false" />
                 </div>
             </div>
         </div>

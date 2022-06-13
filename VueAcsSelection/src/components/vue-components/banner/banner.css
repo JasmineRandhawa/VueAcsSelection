@@ -1,6 +1,6 @@
-.bannerDiv {
-    background-color: lightseagreen;
-    width:stretch;
-    height:auto;
-    padding:2pc;
+.bannerContainerDiv {
+    border: 1px, solid black;
+    width: stretch;
+    height: auto;
+    padding: 10px;
 }

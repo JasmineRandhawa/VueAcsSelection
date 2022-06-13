@@ -25,8 +25,7 @@ export default class Banner extends Vue {
         super();
         this.IsComponentListShow = false;
         this.BlockComponents = [];
-        this.ComponentTypeList = [{ ComponentTypeId: "BL", ComponentTypeName: "Block" },
-        { ComponentTypeId: "PL", ComponentTypeName: "Produc tLicense" },
+        this.ComponentTypeList = [{ ComponentTypeId: "PL", ComponentTypeName: "Product License" },
         { ComponentTypeId: "P", ComponentTypeName: "Price" },
         { ComponentTypeId: "ST", ComponentTypeName: "Static Text" },
             { ComponentTypeId: "AB", ComponentTypeName: "Action Button" },
@@ -48,20 +47,9 @@ export default class Banner extends Vue {
     AddComponent() {
         var acsComponent = null;
         switch (this.SelectedComponent.ComponentTypeId) {
-            case "BL":
-                acsComponent = new AcsComponent(
-                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
-                    ComponentType.Block, // ComponentType 
-                    EditControlType.List,// EditControlType  ,
-                    DisplayControlType.List, //DisplayControlType  ,
-                    "", // Display Text
-                    true, // isEditable
-                );
-                this.BlockComponents.push(acsComponent);
-                break;
             case "ST":
                 acsComponent = new AcsComponent(
-                    this.Parent + "_Block" + this.BlockComponents.length + 1 + "", //Component Id
+                    this.Parent + "_StaticText" + this.BlockComponents.length + 1 + "", //Component Id
                     ComponentType.StaticContent, // ComponentType 
                     EditControlType.SingleLineTextbox,// EditControlType  ,
                     DisplayControlType.Label, //DisplayControlType  ,

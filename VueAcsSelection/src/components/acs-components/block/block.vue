@@ -19,6 +19,7 @@
         </div>
         <div id="componentDiv">
             <div v-for="component in BlockComponents" :key="component.ComponentId" :value="component">
+                {{component.ComponentId}}
                 <StaticText />
             </div>
         </div>

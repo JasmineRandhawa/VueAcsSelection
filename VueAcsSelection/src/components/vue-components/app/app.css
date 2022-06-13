@@ -3,7 +3,9 @@
 .appDiv {
     border: solid;
     height: auto;
-    font-family: 'Lucida Sans !important'
+    font-family: 'Lucida Sans !important';
+    width: 1120px;
+
 }
 
 .layerButton {
@@ -106,10 +108,10 @@
     font-family: 'Lucida Sans !important';
 }
 
-.containerDiv {
+.containersDiv {
     background-color: white;
     border: black solid 1px;
-    width: 300px;
+    width: stretch;
     height: auto;
     padding: 0pc !important;
     font-family: 'Lucida Sans !important';

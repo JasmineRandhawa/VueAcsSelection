@@ -5,11 +5,10 @@
 </style>
 
 <template>
-    <div id="containersDiv">
-        <div class="containerDiv" v-if="Containers.length>0">
-            <div v-for="container in Containers" :key="container.ComponentId">
-                <Block :Parent="container.ComponentId"  />
-            </div>
-        </div> 
+    <div  v-if="Containers.length>0">
+        <div v-for="container in Containers" :key="container.ComponentId" 
+            class="containerDiv" >
+            <Container :Parent="container.ComponentId" :IsBanner="IsBanner" />
+        </div>
     </div>
 </template>

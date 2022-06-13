@@ -50,6 +50,8 @@
     <Content Include="src\components\vue-components\banner\banner.vue" />
     <Content Include="src\components\vue-components\containers\containers.css" />
     <Content Include="src\components\vue-components\containers\containers.vue" />
+    <Content Include="src\components\vue-components\container\container.css" />
+    <Content Include="src\components\vue-components\container\container.vue" />
     <Content Include="src\components\vue-components\menu\menu.css" />
     <Content Include="src\components\vue-components\menu\menu.vue" />
     <Content Include="src\main.css" />
@@ -75,6 +77,7 @@
     <Folder Include="src\components\vue-components\banner\" />
     <Folder Include="src\components\vue-components\containers\" />
     <Folder Include="src\components\vue-components\menu\" />
+    <Folder Include="src\components\vue-components\container\" />
     <Folder Include="src\enumeration\" />
     <Folder Include="src\interfaces\" />
     <Folder Include="src\models\" />
@@ -91,6 +94,7 @@
     <TypeScriptCompile Include="src\components\vue-components\app\app.ts" />
     <TypeScriptCompile Include="src\components\vue-components\banner\banner.ts" />
     <TypeScriptCompile Include="src\components\vue-components\containers\containers.ts" />
+    <TypeScriptCompile Include="src\components\vue-components\container\container.ts" />
     <TypeScriptCompile Include="src\components\vue-components\menu\menu.ts" />
     <TypeScriptCompile Include="src\enumeration\Enumeration.ts" />
     <TypeScriptCompile Include="src\main.ts" />

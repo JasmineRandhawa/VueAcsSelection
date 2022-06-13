@@ -1,0 +1,35 @@
+.containerDiv {
+    border: 1px, solid black;
+    width:350px;
+    height: auto;
+    padding: 10px;
+}
+
+.blockDiv {
+    background-color: azure;
+    padding: 5px;
+    height: 40px;
+}
+
+.blockButton {
+    background-color: white;
+    color: cadetblue;
+    text-align: center;
+    font-weight: bold;
+    padding: 3px;
+    height: 30px;
+    width: 80px;
+    cursor: pointer;
+    border: 1px solid cadetblue;
+    transition-duration: 0.4s;
+    float:right;
+}
+
+.layerButton:hover {
+    background-color: cadetblue;
+    color: white;
+}
+
+.isBannerContainerDiv {
+    width: stretch !important;
+}

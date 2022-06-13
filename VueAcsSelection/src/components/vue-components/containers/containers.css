@@ -1,6 +1,16 @@
 .containersDiv {
     border: 1px, solid black;
     width: auto;
-    height: 100px;
+    height: auto;
     padding: 10px;
+}
+
+.containerDiv
+{
+    display:inline-block;
+}
+
+.isBannerContainerDiv
+{
+    width:stretch;
 }
