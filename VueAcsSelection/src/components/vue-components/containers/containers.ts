@@ -14,7 +14,6 @@ export default class Containers extends Vue {
     @Prop() private ContainersCount!: number;
 
     ContainersList: AcsComponent[] ;
-    conCount: number = 0;
     constructor() {
         super();
         this.ContainersList = [];
@@ -22,16 +21,25 @@ export default class Containers extends Vue {
             this.AddNewContainer();
     }
 
+    mounted() {
+        this.ContainersList = [];
+    }
+
+    created() {
+        this.ContainersList = [];
+    }
+
     AddNewContainer() {
         var container = new AcsComponent(
-            "Layer_Container" + this.conCount + "", //Component Id
+            "Layer_Container" + this.ContainersCount + "", //Component Id
             ComponentType.Block, // ComponentType 
             EditControlType.List,// EditControlType  ,
             DisplayControlType.List, //DisplayControlType  ,
             "", // Display Text
             true, // isEditable
         );
-       this.ContainersList.push(container);
+        if(this.ContainersList)
+             this.ContainersList.push(container);
     }
 
 
