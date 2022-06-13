@@ -3,7 +3,7 @@ import Containers from '../containers/containers.vue';
 import Banner from  '../banner/banner.vue';
 import { ListItem } from '../../../models/ListItem';
 import { AcsComponent } from '../../../models/AcsComponent';
-import { ComponentType, DisplayControlType, EditControlType } from '../../../enumeration/Enumeration';
+
 
 @Component({
     components: {
@@ -18,7 +18,7 @@ export default class App extends Vue {
     SelectionVariation: ListItem;
     VariationList: ListItem[];
     MenuButtonList: ListItem[];
-    ContainersArray: AcsComponent[] = [];
+    ContainersCount: number;
 
     constructor() {
         super();
@@ -29,8 +29,7 @@ export default class App extends Vue {
 
         this.MenuButtonList = [{ Name: "Banner", Description: "Add Banner Section", DisplayText: "+ Banner", Disabled: false },
             { Name: "Container", Description: "Add Container Section", DisplayText: "+ Container", Disabled: false }];
-
-        this.ContainersArray = [];
+        this.ContainersCount = 0;
     } 
 
     ChangeVariation(variation: ListItem) {
@@ -45,24 +44,8 @@ export default class App extends Vue {
                 menuItem.Disabled = true;
                 break;
             case "Container":
-                this.AddContainer();
+                ++this.ContainersCount;
                 break;
         }
-    }
-
-    AddContainer() {
-        var container = new AcsComponent(
-            "Layer_Container" + this.ContainersArray.length + 1 + "", //Component Id
-            ComponentType.Block, // ComponentType 
-            EditControlType.List,// EditControlType  ,
-            DisplayControlType.List, //DisplayControlType  ,
-            "", // Display Text
-            true, // isEditable
-        );
-        this.ContainersArray.push(container);
-    }
-
-     {
-        return JSON.stringify(this.ContainersArray)
     }
 }    

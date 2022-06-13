@@ -6,10 +6,11 @@
 
 <template>
     <div id="containersDiv">
-        <div class="containerDiv">
-            <div v-for="container in Containers" :key="container.ComponentId" :value="container">
-                <Block Parent="Parent + ''Container''" />
+        <div class="containerDiv" v-if="ContainersList && ContainersList.length>0">
+            <div v-for="container in ContainersList" :key="container.ComponentId" :value="container">
+                <Block :Parent="Parent + 'Container'" />
             </div>
-        </div>
+        </div> 
     </div>
+
 </template>

@@ -50,16 +50,16 @@
                 <br />
                 <br />
                 <div class="bannerDiv" id="bannerSection">
-                    <Banner Parent="Layer"/>
+                    <Banner :Parent="Layer"/>
                 </div>
             </div>
 
             <!--Container Section-->
-            <div v-if="ContainersArray.length>0">
+            <div v-if="ContainersCount>0">
                 <br />
                 <br />
                 <div class="containerDiv" id="containerSection">
-                    <Containers ContainersJsonString="GetContainerJsonString" Parent="Layer" />
+                    <Containers :ContainersCount="ContainersCount" :Parent="'Layer'" />
                 </div>
             </div>
         </div>
