@@ -1,4 +1,5 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+
 import { AcsComponent } from '../../../models/AcsComponent';
 import Block from '../../acs-components/block/block.vue';
 import { ComponentType, DisplayControlType, EditControlType } from '../../../enumeration/Enumeration';
@@ -12,7 +13,6 @@ import { ComponentType, DisplayControlType, EditControlType } from '../../../enu
 export default class Containers extends Vue {
 
     @Prop() private Parent!: string;
-    @Prop() private IsBanner!: Boolean;
     ContainerBlocks: AcsComponent[];
 
     constructor() {

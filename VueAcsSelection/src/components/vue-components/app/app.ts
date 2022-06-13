@@ -1,9 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator';
+
 import { ListItem } from '../../../models/ListItem';
+import { ListType } from '../../../enumeration/Enumeration';
 import Containers from '../containers/containers.vue';
 import Banner from '../banner/banner.vue';
 import Menu from '../menu/menu.vue';
-import { ListType } from '../../../enumeration/Enumeration';
+
 
 @Component({
     components: {
@@ -29,7 +31,10 @@ export default class App extends Vue {
         this.ContainersCount = 0;
     } 
 
+    //receive updates from menu component on menu change 
     UpdateSelectedMenuItem(item: ListItem) {
+
+        //if ListType is ExperimentVarationList
         if (item.ListType == ListType.SelectionPageActions) {
             switch (item.Name) {
                 case "Banner":
@@ -42,8 +47,10 @@ export default class App extends Vue {
                     break;
             }
         }
-        else if (item.ListType == ListType.ExperimentVariation) {
+
+        //if ListType is SelectionPageActions
+        else if (item.ListType == ListType.ExperimentVariation) 
             this.SelectedVariation = item;
-        }
+        
     }
 }    

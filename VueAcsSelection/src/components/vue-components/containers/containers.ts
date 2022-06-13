@@ -1,6 +1,7 @@
-import { Component,Prop, Vue, Watch } from 'vue-property-decorator';
-import { AcsComponent } from '../../../models/AcsComponent';
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+
 import Container from '../container/container.vue';
+import { AcsComponent } from '../../../models/AcsComponent';
 import { ComponentType, DisplayControlType, EditControlType } from '../../../enumeration/Enumeration';
 
 @Component({
@@ -20,24 +21,22 @@ export default class Containers extends Vue {
         super();
         this.Containers = [];
         this.Count = 0;
-
     }
 
     mounted() {
         this.Count = this.ContainersCount;
-        for (var i = 0; i < this.Count; i++) {
+        for (var i = 0; i < this.Count; i++) 
             this.AddContainer();
-        }
     }
 
     @Watch('ContainersCount')
     watchHandler() {
-        if (this.Containers.length > this.ContainersCount) {
+        if (this.Containers.length > this.ContainersCount) 
             this.Count = this.Containers.length - this.ContainersCount;
-        }
-        for (var i = 0; i < this.Count; i++) {
+        
+        for (var i = 0; i < this.Count; i++) 
             this.AddContainer();
-        }
+        
     }
 
     AddContainer() {

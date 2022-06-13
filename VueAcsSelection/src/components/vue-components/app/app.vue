@@ -7,10 +7,9 @@
 <template>
     <div class="center appDiv" id="app">
 
-        <!--Layer Button-->
+        <!--Layer Header-->
         <div>
-            <button :disabled="IsLayerAdded" @click="IsLayerAdded=true"
-                    v-bind:class="{'layerButton':true, 'disabledMenuButton':(IsLayerAdded)}">
+            <button :disabled="IsLayerAdded" @click="IsLayerAdded=true" v-bind:class="{'layerButton':true, 'disabledMenuButton':(IsLayerAdded)}">
                 + Layer
             </button>
         </div>

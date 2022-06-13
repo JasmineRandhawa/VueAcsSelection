@@ -22,7 +22,6 @@ export enum EditControlType {
     Button
 }
 
-
 export enum DisplayControlType {
     Div,
     Paragraph,

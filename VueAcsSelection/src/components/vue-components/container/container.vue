@@ -6,8 +6,11 @@
 
 <template>
     <div v-bind:class="{'containerDiv':true, 'bannerContainerDiv':(IsBanner)}">
+
+        <!--Container Header-->
         <button class="blockButton" @click="AddBlock"> +  Block</button>
 
+        <!--Container Blocks-->
         <div v-if="ContainerBlocks" class="innerContainerDiv">
             <div v-for="block in ContainerBlocks" :key="block.ComponentId" :value="block">
                 {{"Parent: "+block.ComponentId}}
