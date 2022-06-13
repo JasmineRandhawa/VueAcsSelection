@@ -13,7 +13,7 @@ import { ComponentType, DisplayControlType, EditControlType } from '../../../enu
 export default class Containers extends Vue {
 
     @Prop() private Parent!: string;
-    @Prop() private IsBanner!: Booelan;
+    @Prop() private IsBanner!: Boolean;
     ContainerBlocks: AcsComponent[];
 
     constructor() {
