@@ -9,7 +9,7 @@
         <div v-for="container in Containers" :key="container.ComponentId"
              class="containerDiv">
             {{"Parent :" + container.ComponentId}}
-            <Container :Parent="container.ComponentId" :IsBanner="IsBanner" />
+            <Container :Parent="container.ComponentId"/>
         </div>
     </div>
 </template>

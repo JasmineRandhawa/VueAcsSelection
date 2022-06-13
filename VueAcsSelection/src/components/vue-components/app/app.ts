@@ -1,53 +1,49 @@
 import { Component, Vue } from 'vue-property-decorator';
-import Containers from '../containers/containers.vue';
-import Banner from  '../banner/banner.vue';
 import { ListItem } from '../../../models/ListItem';
-import { AcsComponent } from '../../../models/AcsComponent';
-
+import Containers from '../containers/containers.vue';
+import Banner from '../banner/banner.vue';
+import Menu from '../menu/menu.vue';
+import { ListType } from '../../../enumeration/Enumeration';
 
 @Component({
     components: {
-        Containers,
+        Menu,
         Banner,
+        Containers,
     }
 })
 
 export default class App extends Vue {
     IsBannerAdded: Boolean;
     IsLayerAdded: Boolean;
-    SelectionVariation: ListItem;
-    VariationList: ListItem[];
-    MenuButtonList: ListItem[];
     ContainersCount: number;
+    SelectedVariation: ListItem | null;
+    MenuListTypes: ListType[];
 
     constructor() {
         super();
         this.IsLayerAdded = false;
         this.IsBannerAdded = false;
-        this.VariationList = [{ Name: "C", Description: "Control", DisplayText: "C", Disabled: false }, { Name: "N", Description: "New", DisplayText: "N", Disabled: false }];
-        this.SelectionVariation = { Name: "C", Description: "Control", DisplayText: "C", Disabled: false };
-
-        this.MenuButtonList = [{ Name: "Banner", Description: "Add Banner Section", DisplayText: "+ Banner", Disabled: false },
-            { Name: "Container", Description: "Add Container Section", DisplayText: "+ Container", Disabled: false }];
+        this.SelectedVariation = null;
+        this.MenuListTypes = [ ListType.ExperimentVariation, ListType.SelectionPageActions];   
         this.ContainersCount = 0;
     } 
 
-    ChangeVariation(variation: ListItem) {
-        this.SelectionVariation = variation;
-    }
-
-    ChangeMenu(menuItem: ListItem) {
-        switch (menuItem.Name)
-        {
-            case "Banner":
-                this.IsBannerAdded = true;
-                menuItem.Disabled = true;
-                break;
-            case "Container":
-                ++this.ContainersCount;
-                break;
-            default:
-                break;
+    UpdateSelectedMenuItem(item: ListItem) {
+        if (item.ListType == ListType.SelectionPageActions) {
+            switch (item.Name) {
+                case "Banner":
+                    this.IsBannerAdded = true;
+                    break;
+                case "Container":
+                    ++this.ContainersCount;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if (item.ListType == ListType.ExperimentVariation) {
+            this.SelectedVariation = item;
         }
     }
 }    

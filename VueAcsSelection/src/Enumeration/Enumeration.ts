@@ -7,6 +7,12 @@ export enum ComponentType {
     ActionButton
 }
 
+export enum ListType
+{
+    ExperimentVariation,
+    SelectionPageActions
+}
+
 export enum EditControlType {
     Div,
     SingleLineTextbox,

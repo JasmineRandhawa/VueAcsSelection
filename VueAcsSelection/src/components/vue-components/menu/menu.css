@@ -1,4 +1,61 @@
-.homeDiv
-{
+.menuDiv {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 50px;
+    width:300px;
+    padding-top: 10px;
+}
 
+.menuListLabel {
+    color: cadetblue;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    font-family: 'Lucida Sans' !important;
+}
+
+.menuList {
+    padding-inline-start: 0px !important;
+    margin-block-start: 0px !important;
+    margin-block-end: 0px !important;
+}
+
+.listButtons {
+    background-color: white;
+    color: cadetblue;
+    text-align: center;
+    font-weight: bold;
+    padding: 3px;
+    cursor: pointer;
+    border: 1px solid cadetblue;
+    transition-duration: 0.4s;
+    font-family: 'Lucida Sans !important';
+    display: inline-block;
+    padding-top: 10px !important;
+}
+
+.listItem {
+    padding-top: 10px;
+    height: 30px;
+    width: 60px;
+}
+
+.listItemSelection {
+    background-color: cadetblue;
+    color: white;
+}
+
+.actionListButtons {
+    width: 100px;
+}
+
+.actionListButtons:hover {
+    background-color: cadetblue;
+    color: white;
+}
+
+.disabledActionButton {
+    pointer-events: none;
+    background-color: darkgray;
+    color: white;
 }

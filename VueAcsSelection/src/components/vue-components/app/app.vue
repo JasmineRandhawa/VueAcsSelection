@@ -20,47 +20,27 @@
             <br />
             <br />
 
-            <!--Experiment Variation Section-->
-            <div class="menuVariationDiv">
-                <div class="menuDiv" id="varitionSection">
-                    <span class="variationListSpan">Select Variation</span>
-                    <ul class="variationList">
-                        <li id="menuList" v-for="variation in VariationList" :key="variation.Name" :value="variation"
-                            v-bind:class="{'listButtons listItem':true, 'listItemSelection':(variation.Name === SelectionVariation.Name)}"
-                            @click="ChangeVariation(variation)">
-                            {{variation.DisplayText}}
-                        </li>
-                    </ul>
-                </div>
-
-                <!--Action Buttons Menu Section-->
-                <div class="menuDiv" id="menuSection">
-                    <span class="variationListSpan">Actions</span>
-                    <ul class="variationList">
-                        <li id="menuList" v-for="menuListItem in MenuButtonList" :key="menuListItem.Name" :value="menuListItem"
-                            v-bind:class="{'listButtons listItem menuListButtons':true, 'disabledMenuButton':(menuListItem.Disabled)}"
-                            @click="ChangeMenu(menuListItem)">
-                            {{menuListItem.DisplayText}}
-                        </li>
-                    </ul>
-                </div>
+            <!--Menu Section-->
+            <div class="menuSection">
+                <Menu  v-for="listType in MenuListTypes" :ListType="listType" @UpdateSelectedMenuItem="UpdateSelectedMenuItem" />
             </div>
+
             <!--Banner Section-->
-            <div v-if="IsBannerAdded">
+            <div id="bannerSection" v-if="IsBannerAdded">
                 <br />
                 <br />
                 {{"Parent of Banner Section: "+ 'Layer'}}
-                <div class="bannerDiv" id="bannerSection">
+                <div class="bannerDiv">
                     <Banner :Parent="'Layer'" />
                 </div>
             </div>
 
             <!--Container Section-->
-            <div v-if="ContainersCount>0">
+            <div id="containerSection" v-if="ContainersCount>0" >
                 <br />
                 <br />
                 {{"Parent of Containers Section : "+ 'Layer'}}
-                <div class="containersDiv" id="containerSection">
+                <div class="containersDiv" >
                     <Containers :ContainersCount="ContainersCount" :Parent="'Layer'" :IsBanner="false" />
                 </div>
             </div>
