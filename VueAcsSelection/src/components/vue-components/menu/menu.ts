@@ -40,7 +40,6 @@ export default class Menu extends Vue {
     }
 
     ChangeMenuItem(item: ListItem) {
-        console.log(item);
          //if ListType is ExperimentVarationList
         if (this.ListType == ListType.ExperimentVariation) {
             this.SelectedMenuItem = item;
